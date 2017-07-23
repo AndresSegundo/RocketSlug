@@ -7,8 +7,7 @@ public class playerMVMT : MonoBehaviour {
 	void Update () {
 		if (Input.touchCount == 1) {
 			Touch touch = Input.GetTouch (0);
-			float x = -7.5f + 15 * touch.position.x / Screen.width;
-
+			float x = Mathf.Clamp(-7.5f + 15 * touch.position.x / Screen.width, -2, 2);
 			transform.position = new Vector3 (x, -3, 0);
 		}
 		
